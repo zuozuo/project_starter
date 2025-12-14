@@ -1,11 +1,11 @@
-.PHONY: help init dev dev-down test test-local lint clean install-hooks
+.PHONY: help init dev dev-down stop test test-local lint clean install-hooks
 
 # 默认目标：显示帮助
 help:
 	@echo "可用命令："
 	@echo "  make init        - 初始化项目（复制环境配置、安装依赖、配置 hooks）"
 	@echo "  make dev         - 启动开发环境（Docker Compose）"
-	@echo "  make dev-down    - 停止开发环境"
+	@echo "  make stop        - 停止开发环境"
 	@echo "  make test        - 运行测试（Docker 环境）"
 	@echo "  make test-local  - 运行本地测试"
 	@echo "  make lint        - 运行代码检查"
@@ -72,8 +72,12 @@ dev:
 	@echo "  Adminer: http://localhost:8080"
 
 # 停止开发环境
-dev-down:
+stop:
 	docker compose down
+	@echo "开发环境已停止"
+
+# 停止开发环境（别名）
+dev-down: stop
 
 # 运行测试（Docker 环境）
 test:
