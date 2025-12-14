@@ -64,33 +64,30 @@ git clone <repository-url> my-project
 cd my-project
 ```
 
-2. **配置环境变量**
+2. **初始化项目**
 
 ```bash
-# 复制环境变量示例文件
-cp .env.example .env
+# 初始化项目（复制环境配置、安装依赖、配置 Git hooks）
+make init
+```
 
+3. **配置环境变量**
+
+```bash
 # 编辑 .env 文件，修改以下关键配置：
-# - PROJECT_NAME: 项目名称
-# - SECRET_KEY: JWT 密钥
-# - POSTGRES_PASSWORD: 数据库密码
-# - FIRST_SUPERUSER: 管理员邮箱
-# - FIRST_SUPERUSER_PASSWORD: 管理员密码
+# - SECRET_KEY: JWT 密钥（必须修改）
+# - POSTGRES_PASSWORD: 数据库密码（必须修改）
+# - FIRST_SUPERUSER_PASSWORD: 管理员密码（必须修改）
 ```
 
-3. **启动服务**
+4. **启动服务**
 
 ```bash
-# 启动所有后端服务
-docker compose up -d
-
-# 启动前端开发服务器
-cd frontend
-npm install
-npm run dev
+# 启动开发环境
+make dev
 ```
 
-4. **访问应用**
+5. **访问应用**
 
 - 前端: http://localhost:5173
 - API 文档: http://localhost:8000/docs
