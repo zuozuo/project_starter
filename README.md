@@ -98,6 +98,53 @@ npm run dev
 
 ---
 
+## Make 命令
+
+项目提供了一系列 Make 命令来简化开发流程：
+
+### 常用命令
+
+| 命令 | 说明 |
+|------|------|
+| `make help` | 显示所有可用命令 |
+| `make init` | 初始化项目（复制环境配置、安装依赖、配置 Git hooks） |
+| `make dev` | 启动开发环境（Docker Compose） |
+| `make stop` | 停止开发环境 |
+| `make test` | 运行测试（Docker 环境） |
+| `make test-local` | 运行本地测试 |
+| `make lint` | 运行代码检查 |
+| `make format` | 格式化代码 |
+| `make clean` | 清理临时文件 |
+
+### 依赖安装
+
+| 命令 | 说明 |
+|------|------|
+| `make install-base` | 安装基础后端依赖 |
+| `make install-ai` | 安装 AI 功能依赖 |
+| `make install-ocr` | 安装 OCR 功能依赖 |
+| `make install-all` | 安装所有依赖 |
+| `make install-hooks` | 安装 pre-commit hooks |
+
+### 快速使用示例
+
+```bash
+# 首次使用：初始化项目
+make init
+
+# 编辑 .env 文件后，启动开发环境
+make dev
+
+# 停止开发环境
+make stop
+
+# 提交代码前：检查和格式化
+make lint
+make format
+```
+
+---
+
 ## 生成安全密钥
 
 环境变量文件中的某些值默认为 `changethis`，你需要生成安全的密钥替换它们：
