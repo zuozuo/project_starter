@@ -21,6 +21,11 @@ init:
 	@echo "正在初始化项目..."
 	@[ -f .env ] || cp .env.example .env
 	@echo "✓ 环境配置文件已创建"
+	@# 检测并清理损坏的虚拟环境（复制项目后路径会失效）
+	@if [ -d backend/.venv ] && ! backend/.venv/bin/python --version >/dev/null 2>&1; then \
+		echo "检测到损坏的虚拟环境，正在清理..."; \
+		rm -rf backend/.venv; \
+	fi
 	cd backend && uv sync
 	@echo "✓ 后端依赖已安装"
 	cd frontend && npm install
