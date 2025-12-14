@@ -22,7 +22,6 @@
   - 🎨 [Ionic Framework](https://ionicframework.com) - 跨平台 UI 组件
   - 📱 [Capacitor](https://capacitorjs.com) - 原生能力访问
   - 🤖 自动生成的前端 API 客户端
-  - 🧪 [Playwright](https://playwright.dev) - E2E 测试
 
 ### 基础设施和开发工具
 
