@@ -1,29 +1,47 @@
-# Security Policy
+# 安全策略
 
-Security is very important for this project and its community. 🔒
+安全对于本项目和团队至关重要。
 
-Learn more about it below. 👇
+## 支持的版本
 
-## Versions
+仅支持最新版本或最新发布版。
 
-The latest version or release is supported.
+建议为您的应用编写测试，并在确保测试通过后频繁更新版本。这样您将受益于最新的功能、错误修复和**安全修复**。
 
-You are encouraged to write tests for your application and update your versions frequently after ensuring that your tests are passing. This way you will benefit from the latest features, bug fixes, and **security fixes**.
+## 报告漏洞
 
-## Reporting a Vulnerability
+如果您发现了漏洞，即使不确定，请立即通过以下方式报告：
 
-If you think you found a vulnerability, and even if you are not sure about it, please report it right away by sending an email to: security@tiangolo.com. Please try to be as explicit as possible, describing all the steps and example code to reproduce the security issue.
+- 发送邮件至：security@your-team.com（请替换为您团队的安全邮箱）
+- 或在内部安全频道报告
 
-I (the author, [@tiangolo](https://twitter.com/tiangolo)) will review it thoroughly and get back to you.
+请尽量详细描述问题，包括所有步骤和示例代码以重现安全问题。
 
-## Public Discussions
+我们将彻底审查并尽快回复您。
 
-Please restrain from publicly discussing a potential security vulnerability. 🙊
+## 公开讨论
 
-It's better to discuss privately and try to find a solution first, to limit the potential impact as much as possible.
+请避免公开讨论潜在的安全漏洞。
+
+最好先私下讨论并尝试找到解决方案，以尽可能减少潜在影响。
+
+## 安全最佳实践
+
+### 环境配置
+
+- **永远不要**在生产环境使用默认密钥（如 `changethis`）
+- 使用强密码生成器创建密钥：
+  ```bash
+  python -c "import secrets; print(secrets.token_urlsafe(32))"
+  ```
+- 确保 `.env` 文件不被提交到版本控制
+
+### 依赖管理
+
+- 定期更新依赖以获取安全补丁
+- 使用 `pip audit` 或类似工具检查已知漏洞
+- 审查新添加的第三方库
 
 ---
 
-Thanks for your help!
-
-The community and I thank you for that. 🙇
+感谢您帮助保护本项目的安全！

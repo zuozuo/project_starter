@@ -26,8 +26,8 @@ repos:
       - id: ruff-format
   - repo: local
     hooks:
-      - id: local-biome-check
-        name: biome check
+      - id: frontend-lint
+        name: frontend-lint
         entry: bash -c 'cd frontend && npm run lint'
         language: system
         types: [text]

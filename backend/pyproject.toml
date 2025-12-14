@@ -24,6 +24,16 @@ dependencies = [
     # Celery and Redis
     "celery[redis]>=5.3.0,<6.0.0",
     "redis>=5.0.0,<6.0.0",
+]
+
+# 可选依赖组 - 按需安装
+# 安装方式:
+#   基础版: uv sync
+#   AI 版: uv sync --extra ai
+#   OCR 版: uv sync --extra ocr
+#   全功能: uv sync --extra ai --extra ocr
+[project.optional-dependencies]
+ai = [
     # AI/LLM dependencies
     "langchain>=0.1.0,<1.0.0",
     "langchain-openai>=0.0.5,<1.0.0",
@@ -33,14 +43,22 @@ dependencies = [
     "qdrant-client>=1.7.0,<2.0.0",
     # Embeddings
     "sentence-transformers>=2.2.0,<3.0.0",
-    # Document processing
-    "pypdf>=3.17.0,<4.0.0",
-    "python-docx>=1.1.0,<2.0.0",
-    "python-pptx>=0.6.23,<1.0.0",
+]
+ocr = [
     # OCR dependencies
     "pytesseract>=0.3.10,<1.0.0",
     "pillow>=10.0.0,<11.0.0",
     "pdf2image>=1.16.3,<2.0.0",
+]
+doc = [
+    # Document processing
+    "pypdf>=3.17.0,<4.0.0",
+    "python-docx>=1.1.0,<2.0.0",
+    "python-pptx>=0.6.23,<1.0.0",
+]
+all = [
+    # 安装所有可选依赖
+    "app[ai,ocr,doc]",
 ]
 
 [tool.uv]
