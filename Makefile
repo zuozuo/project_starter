@@ -30,8 +30,13 @@ init:
 	@echo "✓ 后端依赖已安装"
 	cd frontend && npm install
 	@echo "✓ 前端依赖已安装"
-	cd backend && uv run pre-commit install
-	@echo "✓ Git hooks 已配置"
+	@# 仅在 Git 仓库中安装 pre-commit hooks
+	@if [ -d .git ]; then \
+		cd backend && uv run pre-commit install; \
+		echo "✓ Git hooks 已配置"; \
+	else \
+		echo "⚠ 跳过 Git hooks（不是 Git 仓库，请先运行 git init）"; \
+	fi
 	@echo ""
 	@echo "=========================================="
 	@echo "✅ 项目初始化完成！"
