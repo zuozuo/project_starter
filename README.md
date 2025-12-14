@@ -240,20 +240,19 @@ Copier 会询问你一些配置问题，并自动更新 `.env` 文件。
 
 ### 移动端开发
 
+项目使用 Ionic + Capacitor 支持打包成 iOS/Android 原生应用。
+
+查看 [移动端开发指南](./mobile-development.md) 了解：
+- 测试手机端界面的多种方法
+- 打包成原生 App 的完整流程
+- 应用配置（图标、权限等）
+
+快速开始：
 ```bash
 cd frontend
-
-# 添加移动平台
-npx cap add android
-npx cap add ios
-
-# 构建并同步
-npm run build
-npx cap sync
-
-# 打开原生 IDE
-npx cap open android
-npx cap open ios
+npx cap add android   # 添加 Android 平台
+npm run build && npx cap sync
+npx cap open android  # 打开 Android Studio
 ```
 
 ---
