@@ -1,0 +1,207 @@
+/**
+ * 登录页面样式
+ * 文艺小清新风格
+ */
+
+.login-page {
+  --background: linear-gradient(
+    180deg,
+    var(--color-background) 0%,
+    var(--color-secondary-light) 100%
+  );
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: var(--spacing-xl);
+  padding-top: calc(var(--ion-safe-area-top) + var(--spacing-2xl));
+  padding-bottom: calc(var(--ion-safe-area-bottom) + var(--spacing-lg));
+  position: relative;
+  overflow: hidden;
+}
+
+/* 装饰元素 */
+.login-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.decoration-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.circle-1 {
+  width: 200px;
+  height: 200px;
+  background: var(--color-primary);
+  top: -50px;
+  right: -50px;
+}
+
+.circle-2 {
+  width: 150px;
+  height: 150px;
+  background: var(--color-accent);
+  bottom: 20%;
+  left: -50px;
+}
+
+.decoration-leaf {
+  position: absolute;
+  width: 60px;
+  height: 80px;
+  opacity: 0.15;
+}
+
+.leaf-1 {
+  top: 15%;
+  left: 10%;
+  background: var(--color-primary);
+  border-radius: 0 100% 0 100%;
+  transform: rotate(-30deg);
+}
+
+.leaf-2 {
+  bottom: 25%;
+  right: 15%;
+  background: var(--color-primary-light);
+  border-radius: 100% 0 100% 0;
+  transform: rotate(15deg);
+}
+
+/* 头部区域 */
+.login-header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  z-index: 1;
+}
+
+.login-logo {
+  margin-bottom: var(--spacing-lg);
+}
+
+.logo-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.logo-text {
+  font-size: 36px;
+  font-weight: 600;
+  color: white;
+  font-family: var(--font-family-title);
+}
+
+.login-title h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-sm) 0;
+  font-family: var(--font-family-title);
+  letter-spacing: 2px;
+}
+
+.login-subtitle p {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* 登录按钮区域 */
+.login-actions {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.login-btn {
+  --border-radius: var(--radius-md);
+  height: 52px;
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: var(--spacing-md);
+}
+
+.wechat-btn {
+  --background: #07C160;
+  --background-hover: #06AD56;
+  --background-activated: #059B4D;
+  --color: white;
+  --box-shadow: 0 4px 12px rgba(7, 193, 96, 0.3);
+}
+
+.phone-btn {
+  --border-color: var(--color-primary);
+  --border-width: 2px;
+  --color: var(--color-primary);
+  --background: transparent;
+  --background-hover: rgba(124, 154, 142, 0.1);
+}
+
+/* 分割线 */
+.login-divider {
+  display: flex;
+  align-items: center;
+  margin: var(--spacing-lg) 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.divider-text {
+  padding: 0 var(--spacing-md);
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+}
+
+/* 底部协议 */
+.login-footer {
+  margin-top: var(--spacing-2xl);
+  text-align: center;
+  z-index: 1;
+}
+
+.footer-text p {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  margin: 0;
+  line-height: var(--line-height-relaxed);
+}
+
+.footer-text .link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer-text .link:hover {
+  text-decoration: underline;
+}

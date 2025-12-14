@@ -1,0 +1,158 @@
+/**
+ * 手机号登录页面样式
+ * 文艺小清新风格
+ */
+
+.phone-login-page {
+  --background: var(--color-background);
+}
+
+.phone-login-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: var(--spacing-xl);
+}
+
+/* 欢迎区域 */
+.welcome-section {
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.welcome-title h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-sm) 0;
+  font-family: var(--font-family-title);
+}
+
+.welcome-subtitle p {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* 表单区域 */
+.form-section {
+  flex: 1;
+}
+
+.input-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.input-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background: var(--color-background-input);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border: 2px solid transparent;
+  transition: border-color var(--transition-fast);
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--color-primary);
+  background: var(--color-background-card);
+}
+
+.input-prefix {
+  color: var(--color-text-primary);
+  font-weight: 500;
+  margin-right: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
+  border-right: 1px solid var(--color-border);
+}
+
+.phone-input,
+.code-input {
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: var(--spacing-sm);
+  --padding-bottom: var(--spacing-sm);
+  --background: transparent;
+  font-size: var(--font-size-md);
+}
+
+.phone-input::part(native-input),
+.code-input::part(native-input) {
+  letter-spacing: 1px;
+}
+
+.code-wrapper {
+  padding-right: var(--spacing-xs);
+}
+
+.code-input {
+  flex: 1;
+}
+
+.send-code-btn {
+  --color: var(--color-primary);
+  --padding-start: var(--spacing-sm);
+  --padding-end: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  min-width: 90px;
+}
+
+.send-code-btn[disabled] {
+  --color: var(--color-text-light);
+}
+
+/* 登录按钮 */
+.login-submit-btn {
+  --border-radius: var(--radius-md);
+  --background: var(--color-primary);
+  --background-hover: var(--color-primary-dark);
+  --background-activated: var(--color-primary-dark);
+  --box-shadow: 0 4px 12px rgba(124, 154, 142, 0.3);
+  height: 52px;
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-top: var(--spacing-xl);
+}
+
+.login-submit-btn[disabled] {
+  --background: var(--color-border);
+  --box-shadow: none;
+}
+
+/* 注册链接 */
+.register-link {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  font-size: var(--font-size-sm);
+}
+
+.register-link .link {
+  color: var(--color-primary);
+  margin-left: var(--spacing-xs);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* 底部装饰 */
+.decoration-bottom {
+  margin-top: auto;
+  padding-top: var(--spacing-2xl);
+  display: flex;
+  justify-content: center;
+}
+
+.deco-line {
+  width: 40px;
+  height: 4px;
+  background: var(--color-secondary);
+  border-radius: var(--radius-full);
+}

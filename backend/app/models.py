@@ -6,10 +6,20 @@ from sqlmodel import Field, Relationship, SQLModel
 
 # Shared properties
 class UserBase(SQLModel):
-    email: EmailStr = Field(unique=True, index=True, max_length=255)
+    email: EmailStr | None = Field(
+        default=None, unique=True, index=True, max_length=255
+    )
+    phone: str | None = Field(default=None, unique=True, index=True, max_length=20)
     is_active: bool = True
     is_superuser: bool = False
     full_name: str | None = Field(default=None, max_length=255)
+    nickname: str | None = Field(default=None, max_length=100)
+    avatar: str | None = Field(default=None, max_length=500)
+    wechat_openid: str | None = Field(
+        default=None, unique=True, index=True, max_length=100
+    )
+    wechat_unionid: str | None = Field(default=None, index=True, max_length=100)
+    is_phone_verified: bool = False
 
 
 # Properties to receive via API on creation
@@ -111,3 +121,37 @@ class TokenPayload(SQLModel):
 class NewPassword(SQLModel):
     token: str
     new_password: str = Field(min_length=8, max_length=128)
+
+
+# Phone authentication models
+class SendSmsRequest(SQLModel):
+    phone: str = Field(min_length=11, max_length=11)
+
+
+class PhoneRegister(SQLModel):
+    phone: str = Field(min_length=11, max_length=11)
+    code: str = Field(min_length=4, max_length=6)
+    nickname: str | None = Field(default=None, max_length=100)
+
+
+class PhoneSmsLogin(SQLModel):
+    phone: str = Field(min_length=11, max_length=11)
+    code: str = Field(min_length=4, max_length=6)
+
+
+# WeChat authentication models
+class WechatLoginRequest(SQLModel):
+    code: str = Field(min_length=1)
+
+
+class WechatLoginResponse(SQLModel):
+    access_token: str
+    token_type: str = "bearer"
+    is_phone_bound: bool
+    user: "UserPublic"
+
+
+# Bind phone models
+class BindPhoneRequest(SQLModel):
+    phone: str = Field(min_length=11, max_length=11)
+    code: str = Field(min_length=4, max_length=6)

@@ -106,6 +106,20 @@ class Settings(BaseSettings):
     OPENAI_API_KEY: str | None = None
     ANTHROPIC_API_KEY: str | None = None
 
+    # 微信开放平台配置
+    WECHAT_APP_ID: str | None = None
+    WECHAT_APP_SECRET: str | None = None
+
+    # 短信服务配置 (阿里云)
+    SMS_ACCESS_KEY_ID: str | None = None
+    SMS_ACCESS_KEY_SECRET: str | None = None
+    SMS_SIGN_NAME: str | None = None
+    SMS_TEMPLATE_CODE: str | None = None
+
+    # 验证码配置
+    SMS_CODE_EXPIRE_MINUTES: int = 5
+    SMS_CODE_LENGTH: int = 6
+
     def _check_default_secret(self, var_name: str, value: str | None) -> None:
         if value == "changethis":
             message = (
