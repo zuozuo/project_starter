@@ -28,7 +28,24 @@ init:
 	cd backend && uv run pre-commit install
 	@echo "✓ Git hooks 已配置"
 	@echo ""
-	@echo "⚠️  请编辑 .env 文件，修改默认密钥后再启动项目"
+	@echo "=========================================="
+	@echo "✅ 项目初始化完成！"
+	@echo "=========================================="
+	@echo ""
+	@echo "下一步操作："
+	@echo "  1. 编辑 .env 文件，修改以下配置："
+	@echo "     - SECRET_KEY (必须修改)"
+	@echo "     - POSTGRES_PASSWORD (必须修改)"
+	@echo "     - FIRST_SUPERUSER_PASSWORD (必须修改)"
+	@echo ""
+	@echo "  2. 启动开发环境："
+	@echo "     make dev"
+	@echo ""
+	@echo "  3. 访问应用："
+	@echo "     - 后端 API: http://localhost:8000"
+	@echo "     - API 文档: http://localhost:8000/docs"
+	@echo "     - 前端应用: http://localhost:5173"
+	@echo ""
 
 # 安装基础后端依赖
 install-base:
