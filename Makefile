@@ -35,7 +35,8 @@ init:
 		cd backend && uv run pre-commit install; \
 		echo "✓ Git hooks 已配置"; \
 	else \
-		echo "⚠ 跳过 Git hooks（不是 Git 仓库，请先运行 git init）"; \
+		echo "⚠ 跳过 Git hooks（不是 Git 仓库）"; \
+		echo "  → 如需启用，请运行: git init && make install-hooks"; \
 	fi
 	@echo ""
 	@echo "=========================================="
