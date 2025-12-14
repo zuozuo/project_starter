@@ -25,7 +25,7 @@ init:
 	@echo "✓ 后端依赖已安装"
 	cd frontend && npm install
 	@echo "✓ 前端依赖已安装"
-	uv run pre-commit install
+	cd backend && uv run pre-commit install
 	@echo "✓ Git hooks 已配置"
 	@echo ""
 	@echo "⚠️  请编辑 .env 文件，修改默认密钥后再启动项目"
@@ -80,7 +80,7 @@ format:
 
 # 安装 pre-commit hooks
 install-hooks:
-	uv run pre-commit install
+	cd backend && uv run pre-commit install
 
 # 清理临时文件
 clean:
