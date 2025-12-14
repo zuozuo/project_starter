@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.cpamaster.app',
-  appName: 'CPA Master',
+  appId: 'com.yourcompany.app',
+  appName: 'Your App Name',
   webDir: 'dist',
   server: {
     androidScheme: 'https',

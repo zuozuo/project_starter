@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# CPA Master 快速启动脚本
+# 快速启动脚本
 
-echo "🚀 启动 CPA Master 项目..."
+echo "🚀 启动全栈应用项目..."
 echo ""
 
 # 检查 Docker 是否运行
